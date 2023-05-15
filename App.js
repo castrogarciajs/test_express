@@ -1,9 +1,9 @@
 import Express from "express";
 
-const app = Express();
+const App = Express();
 
-app.get("/", (_, res) => {
+App.get("/", (_, res) => {
   res.send("hello world");
 });
 
-export default app;
+export default App;

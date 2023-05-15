@@ -1,3 +1,3 @@
-import app from "./App.js";
+import App from "./App.js";
 
-app.listen(3000, () => console.info("http://localhost:3000"));
+App.listen(3000, () => console.info("http://localhost:3000"));

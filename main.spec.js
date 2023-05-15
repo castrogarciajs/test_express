@@ -1,10 +1,10 @@
-import app from "./App.js";
+import App from "./App.js";
 import request from "supertest";
 
 let SERVER;
 
 beforeEach(() => {
-  SERVER = app.listen(3000);
+  SERVER = App.listen(3000);
 });
 
 afterEach(() => {
@@ -13,4 +13,12 @@ afterEach(() => {
 
 test("should return the port 3000", () => {
   expect(SERVER.address().port).toBe(3000);
+  expect(SERVER.address().port).not.toBe(8080);
+});
+
+test("should return status 200", async () => {
+  const res = await request(App).get("/");
+
+  expect(res.status).toBe(200);
+  expect(res.status).not.toBe(404);
 });
