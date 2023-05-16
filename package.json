@@ -1,7 +1,7 @@
 {
   "name": "test",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Test with Express",
   "main": "main.js",
   "type": "module",
   "scripts": {
