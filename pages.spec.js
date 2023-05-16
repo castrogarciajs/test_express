@@ -19,6 +19,14 @@ describe("Router Test", () => {
     const res = await request(App).post("/create");
 
     expect(res.req.method).toMatch("POST");
-    expect(res.req.method).toMatch("GET");
+    expect(res.req.method).not.toMatch("GET");
+  });
+
+  test("should return error", async () => {
+    try {
+      await request(App).post("/notcreate");
+    } catch (error) {
+      expect(error.res).rejects.toThrow();
+    }
   });
 });
